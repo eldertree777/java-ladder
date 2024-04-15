@@ -20,7 +20,7 @@ public class RandomLineGenerator implements LineGenerator {
             return;
         }
 
-        if (line[idx - 1] != true) {
+        if (!line[idx - 1]) {
             line[idx] = pointGenerate();
             return;
         }
