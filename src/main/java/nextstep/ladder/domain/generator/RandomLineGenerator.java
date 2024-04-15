@@ -3,7 +3,7 @@ package nextstep.ladder.domain.generator;
 import java.util.concurrent.ThreadLocalRandom;
 
 public class RandomLineGenerator implements LineGenerator {
-    private final static ThreadLocalRandom random = ThreadLocalRandom.current();
+    private static final ThreadLocalRandom random = ThreadLocalRandom.current();
 
     @Override
     public boolean[] lineGenerate(int lineLength) {
