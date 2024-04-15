@@ -5,7 +5,7 @@ import java.util.List;
 
 public class Ladder {
     private final List<Line> lines;
-    private final static String INVALID_EMPTY_MESSAGE = "빈 List<Line>를 통해 Ladder을 생성할 수 없습니다.";
+    private static final String INVALID_EMPTY_MESSAGE = "빈 List<Line>를 통해 Ladder을 생성할 수 없습니다.";
 
     public Ladder(List<Line> lines) {
         checkInvalidLines(lines);

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Point {
     private final boolean connect;
-    private final static Map<Boolean, Point> cachePoint;
+    private static final Map<Boolean, Point> cachePoint;
 
     static {
         cachePoint = new HashMap<>();

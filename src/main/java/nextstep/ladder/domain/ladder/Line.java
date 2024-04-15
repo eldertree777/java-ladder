@@ -7,8 +7,8 @@ import java.util.stream.IntStream;
 
 public class Line {
     private final List<Point> points;
-    private final static String INVALID_EMPTY_MESSAGE = "빈 List<Point>를 통해 Line을 생성할 수 없습니다.";
-    private final static String INVALID_CONNECT_MESSAGE = "연속된 연결을 될 수 없습니다.";
+    private static final String INVALID_EMPTY_MESSAGE = "빈 List<Point>를 통해 Line을 생성할 수 없습니다.";
+    private static final String INVALID_CONNECT_MESSAGE = "연속된 연결을 될 수 없습니다.";
 
     public Line(List<Point> points) {
         checkInvalidPoints(points);
@@ -16,7 +16,7 @@ public class Line {
     }
 
     public Line(boolean... pointsStatus) {
-        this(connectedStatus(pointsStatus));
+        this(toPointList(pointsStatus));
     }
 
     private void checkInvalidPoints(List<Point> points) {
@@ -34,7 +34,7 @@ public class Line {
                 .anyMatch(i -> points.get(i).isConnect() && points.get(i + 1).isConnect());
     }
 
-    private static List<Point> connectedStatus(boolean[] pointsStatus) {
+    private static List<Point> toPointList(boolean[] pointsStatus) {
         return IntStream.range(0, pointsStatus.length)
                 .mapToObj(i -> Point.of(pointsStatus[i]))
                 .collect(Collectors.toList());

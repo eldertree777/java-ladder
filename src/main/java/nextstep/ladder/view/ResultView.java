@@ -8,11 +8,11 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class ResultView {
-    private final static String LINE_SEPARATOR = System.lineSeparator();
-    private final static String RESULT_MESSAGE = "실행결과";
-    private final static String BLANK = "     ";
-    private final static String CONNECT_LINE = "-----";
-    private final static String STRIPE = "|";
+    private static final String LINE_SEPARATOR = System.lineSeparator();
+    private static final String RESULT_MESSAGE = "실행결과";
+    private static final String BLANK = "     ";
+    private static final String CONNECT_LINE = "-----";
+    private static final String STRIPE = "|";
 
     public static void viewResult(LadderResult ladderResult) {
         StringBuilder resultBuilder = new StringBuilder()
